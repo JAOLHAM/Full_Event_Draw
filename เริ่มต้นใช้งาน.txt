@@ -1,0 +1,37 @@
+LUCKY DRAW — Next.js + React + TypeScript + Tailwind CSS
+(แยกจาก EventFox โดยสิ้นเชิง)
+
+วิธีเริ่มใน VS Code
+1) แตกไฟล์ ZIP ทั้งชุด แล้วเปิดโฟลเดอร์ LuckyDraw_NextJS_TypeScript_v2 ด้วย VS Code
+2) ใช้ Node.js 22 LTS หรือใหม่กว่า แล้วเปิด Terminal
+3) พิมพ์ npm install
+4) พิมพ์ npm run dev
+5) เปิด http://localhost:3000
+6) Live Screen อยู่ที่ http://localhost:3000/live.html
+
+Supabase
+- เตรียม .env.local จาก Publishable Key ของไฟล์เดิมไว้ให้แล้ว
+- ใช้ Supabase Project/Database/RLS/Realtime/Storage ของเดิม
+- ไม่ต้องสร้างตารางใหม่ ไม่ต้อง Run SQL หรือ Reset ข้อมูล
+
+การตรวจสอบก่อนทับเว็บจริง
+- ทดสอบ Login/สมัครสมาชิกและเปลี่ยน Dark/Light
+- ทดสอบเพิ่มรายชื่อ, Import Excel/CSV, จัดการคอลัมน์, Custom Fields
+- ทดสอบเพิ่ม/แก้รางวัล, สุ่มซ้ำ/ไม่ซ้ำ (ใช้ข้อมูลตัวอย่าง)
+- ทดสอบ Winners/Export CSV, Logs, Live Settings, Live Screen/Realtime
+- ห้ามกด Reset กับข้อมูลจริงเพื่อทดสอบ
+- ให้ Deploy ผ่าน Vercel Preview ก่อนทับ URL Production
+
+ขอบเขตงาน: ย้ายโครงหน้าเป็น React JSX + Next.js และ TypeScript พร้อมรักษา controller
+และ CSS เดิมเพื่อไม่เปลี่ยน UI; นี่เป็นการย้ายแบบ compatibility-first
+ไม่ได้เขียน business logic ทั้งหมดใหม่เป็น React Hooks
+
+หมายเหตุ: ยังไม่ได้ทดสอบออนไลน์กับ Supabase ของคุณหรือ Build ด้วย npm ในสภาพแวดล้อมนี้
+ต้องติดตั้ง Dependencies และทดสอบจริงตามรายการก่อนใช้งาน Production
+
+ทดสอบเพิ่มเติม (v2.1)
+- npm run test:logic
+- npm run typecheck
+- npm run test:k6:smoke (ต้องติดตั้ง k6 CLI และเปิด localhost:3000)
+- npm run test:k6:load (อ่านหน้า Live เท่านั้น)
+- Turnstile ปิดอยู่เป็นค่าเริ่มต้น ดู TESTING_AND_TURNSTILE.md ก่อนเปิด

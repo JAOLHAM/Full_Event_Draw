@@ -1,0 +1,6 @@
+/* Preserve the original Kanit font and dashboard/live CSS. */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+/* Tailwind Preflight intentionally disabled to avoid visual changes. */
+@import "../styles/legacy.css";
